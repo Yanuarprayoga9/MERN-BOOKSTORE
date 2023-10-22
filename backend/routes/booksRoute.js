@@ -1,9 +1,10 @@
 import express from "express"
 import { bookModel } from "../models/booksModel.js";
+import verifyToken from '../middleware/verifytoken.js'
 
 const router = express.Router();
 //GET ALL BOOKS
-router.get("/", async (req, res) => {
+router.get("/",verifyToken ,async (req, res) => {
     try {
       const books = await bookModel.find({});
       res.status(200).send({

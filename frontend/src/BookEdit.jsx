@@ -35,7 +35,7 @@ export default function BookEdit() {
         try {
             await axios.post('http://localhost:5555/books', book)
                 .then(() => {
-                    alert("err.message")
+                    alert("success update")
                 })
 
         } catch (err) {
@@ -70,7 +70,7 @@ export default function BookEdit() {
                         <input
                             id="author"
                             name="author"
-                            type="author"
+                            type="text"
                             autoComplete="author"
                             required
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -86,7 +86,7 @@ export default function BookEdit() {
                         <input
                             id="publishYear"
                             name="publishYear"
-                            type="publishYear"
+                            type="number"
                             autoComplete="publishYear"
                             required
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
